@@ -1,0 +1,514 @@
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+// Small devices
+@mixin sm {
+    @media (max-width: #{$screen-sm-min}) {
+        @content;
+    }
+ }
+ 
+ // Medium devices
+ @mixin md {
+    @media (max-width: #{$screen-md-min}) {
+        @content;
+    }
+ }
+ 
+ // Large devices
+ @mixin lg {
+    @media (max-width: #{$screen-lg-min}) {
+        @content;
+    }
+ }
+ 
+ // Extra large devices
+ @mixin xl {
+    @media (max-width: #{$screen-xl-min}) {
+        @content;
+    }
+ }
+ @mixin krfont{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+ 
+    box-sizing: border-box;
+}
+body{
+    background-color: #0dbdfe;
+}
+.wrapper{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    li{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+    }
+}
+.container{
+    max-width: 900px;
+    @include lg{
+        width: 100%;
+        max-width: 360px;
+
+    }
+    margin: 0 auto;
+    padding-top: 80px;
+    position: relative;
+
+    .blue-circle{
+        width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    border: solid 10px #2429c0;
+    display: inline-block;
+    position: absolute;
+    top: 160px;
+    left: 570px;
+    @include lg{
+        display: none;
+    }
+    }
+
+    @include lg{
+        padding-top: 30px;
+
+    }
+    .patternImg{
+        right: 0;
+        top: 0;
+        position: absolute;
+        width: 343px;
+        height: 208px;
+        @include lg{
+            display: none;
+        }
+        img{
+            width: 100%;
+        }
+    }
+    .logo{
+        display: flex;
+        a{
+            display: block;
+        }
+        .logofirst{
+            padding-left: 20px;
+            img{
+                width: 100%;
+            }
+           @include lg{
+            width: 120px;
+           }
+        }
+        .logosecond{
+            padding-left:  90px;
+            img{
+                width: 100%;
+            }
+            @include lg{
+                padding-left: 40px;
+                width: 120px;
+            }
+          
+        }
+    }
+    .title{
+        padding-bottom: 50px;
+        @include lg{
+            padding-bottom: 40px;
+        }
+        .bigtitle{
+            font-weight: 300;
+            text-shadow: 3px 3px 2px rgb(0 0 0 / 10%);
+            padding-top: 70px;
+            opacity: 0;
+            animation: motion 1s;
+            animation-delay: 0.4s;
+            animation-fill-mode: forwards;
+            color: #ffffff;
+            @include  krfont;
+            font-size: 3.125em;
+            @keyframes motion {
+                from{
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to{
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+            }
+            @include lg{
+                font-size: 1.65em;
+                padding-top: 40px;
+                padding-left: 20px;
+            }
+        }
+        .bigtitle_heavy{
+            @include krfont;
+            line-height: 40px;
+            font-weight: 700;
+            text-shadow: 3px 3px 2px rgb(0 0 0 / 10%);
+            opacity: 0;
+            animation: motion 1s;
+            animation-delay: 0.8s;
+            animation-fill-mode: forwards;
+            color: #ffffff;
+            padding-top: 40px;
+            padding-left: 20px;
+            font-size: 3.25em;
+            padding-bottom: 50px;
+            @include lg{
+                padding-top: 20px;
+                letter-spacing: -2px;
+                font-size: 1.56em;
+                padding-bottom:20px;
+            }
+        }
+        .blacktitle{
+            color: #000000;
+            font-size: 25px;
+            font-weight: 700;
+            padding-left: 30px;
+            opacity: 0;
+            animation: motion 1s;
+            animation-delay: 1.2s;
+            animation-fill-mode: forwards; 
+            line-height: 1;
+            @include lg{
+                font-size: 20px;
+                padding-left: 25px;
+            }
+        }
+    }
+    .whiteBox{
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 0 30px rgb(0 0 0 / 20%);
+        position: relative;
+        padding-bottom: 80px;
+        @include lg{
+            padding-bottom: 160px;
+        }
+        @mixin dot{
+            display: inline-block;
+            background-color: #2429c0;
+            width: 8px;
+            height: 8px;
+            transform: translateY(-2px);
+           
+        }
+        @mixin smalltexttitle{
+            margin-left: 10px;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .whiteBox-title1{
+            font-size: 1.3em;
+            font-weight: 400;
+            @include lg{
+                padding-top: 20px;
+                font-size: 18px;
+                padding-left: 25px;
+            }
+            font-weight: 400;
+            line-height: 35px;
+            letter-spacing: -1px;
+            padding-top: 50px;
+            padding-left: 50px;
+            span{
+                border-bottom: 1px solid #000000;
+                
+            }
+        }
+        .whiteBox-title2{
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 35px;
+            padding-top: 16px;
+            letter-spacing: -1px;
+            @include lg{
+                padding-top: 0px;
+                padding-left: 25px;
+                font-size: 18px;
+            }
+            letter-spacing: -1px;
+            padding-left: 50px;
+            span{
+                border-bottom: 1px solid #000000;
+            }
+        }
+        .item1{
+            padding: 80px 50px 20px 50px;
+            @include lg{
+                padding: 30px 20px 15px 25px;
+            }
+        .dot{
+           @include dot;
+         
+        }
+        .texttitle{
+            @include smalltexttitle;
+        }
+        .list{
+            line-height: 30px;
+            letter-spacing: -2px;
+            font-weight: 400px;
+            padding-left: 20px;
+            font-size: 1.25em;
+            @include krfont;
+            padding-top: 14px;
+            @include lg{
+                padding-top: 10px;
+            }
+        }
+    }
+    .item2{
+        padding: 20px 50px;
+        @include lg{
+            padding: 15px 25px;
+        }
+        p{
+            .dot{
+                @include dot;
+            }
+            .texttitle{
+                @include smalltexttitle;
+            }
+        }
+        .list2{
+            padding-top: 10px;
+            letter-spacing: -1px;
+            line-height: 30px;
+            padding-left: 25px;
+            font-weight: 400;
+            font-size: 1.2em ;
+            @include lg{
+                font-size: 1em;
+
+            }
+
+        }
+    }
+    .kit_img{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    opacity: 0;
+    animation: motion 1s;
+    animation-delay: 1.6s;
+    animation-fill-mode: forwards;
+    @include lg{
+        display: none;
+    }
+    }
+    .mainImg{
+        @keyframes move {
+            from{
+                transform: translateY(5px);
+            }
+            to{
+                transform: translateY(0px);
+            }
+        }
+        @keyframes rota {
+            from{
+                transform: rotate(5deg);
+            }
+            to{
+                transform: rotate(0deg);
+            }
+        }
+        img{
+            position: absolute;
+            bottom: 0;
+        }
+        .ani1{
+            right: 300px;
+            animation: move 0.5s alternate-reverse infinite;
+            @include lg{
+                right: 220px;
+                width: 200px;
+            }
+             }
+             .ani2{
+                right: 190px;
+                bottom: 140px;
+                animation: rota 0.5s alternate-reverse infinite;
+                @include lg{
+                    right: 130px;
+                    width: 100px;
+                    bottom: 70px;
+                }
+                 }
+        .ani3{
+            right: 25px;
+            bottom: 100px;
+            animation: rota 1.5s alternate-reverse infinite;
+            @include lg{
+                right: 10px;
+                bottom: 70px;
+                width: 100px;
+            }
+        }
+        .ani4{
+            right: 130px;
+            animation: rota 1.5s alternate-reverse infinite;
+            @include lg{
+                right: 50px;
+                width: 100px;
+            }
+        }
+    }
+}
+}
+.containerYellow{
+    background-color: #ffde27;
+    width: 100%;
+    box-shadow: 0 0 30px rgb(0 0 0 / 20%);
+    position: absolute;
+    top: 1120px;
+    text-align: center;
+    @include lg{
+        top: 870px;
+    }
+    .videoBox-desc{
+      text-align: center;
+      box-sizing: border-box;
+      text-align: center;
+      margin: 80px auto 20px auto;
+      position: relative;
+      @include lg{
+        display: none;
+      }
+}
+.videoBox-mobile{
+    display: none;
+    @include lg{
+        display: block;
+        box-sizing: border-box;
+        text-align: center;
+        margin: 80px auto 20px auto;
+        position: relative;
+    }
+}
+.imgBox{
+    position: relative;
+    text-align: center;
+    a{
+        display: block;
+    }
+    .mobImg{
+        display: none;
+        @include lg{
+            display: block;
+           margin: auto;
+            width: 320px;
+            img{
+                width: 100%;
+                margin-bottom: 60px;
+            }
+        }
+    }
+.deskImg{
+    margin-bottom: 60px;
+    text-decoration: none;
+    @include lg{
+        display: none;
+    }
+}
+    .down{
+        position: absolute;
+        bottom: -100px;
+        @include lg{
+            bottom: -45px;
+        }
+        left: 50%;
+        transform: translateX(-50%);
+        img{
+        overflow-clip-margin: content-box;
+        overflow: clip
+        }
+    }
+}
+}
+.blueContainer{
+    max-width: 900px;
+    margin: auto;
+    @include lg{
+        width: 100%;
+        max-width: 360px;
+
+    }
+    margin-top: 680px;
+    color: #ffffff;
+    text-align: center;
+    padding-bottom: 80px;
+    @include lg{
+        margin-top: 480px;
+    }
+    .readmeText{
+        padding-bottom: 40px;
+        padding-top: 80px; 
+        @include lg{
+            padding-top: 220px;
+        } 
+        .titleReadmeText{
+            font-size: 1.87em;
+            padding-bottom: 20px;
+            @include lg{
+                font-size: 22px;
+                text-align: left;
+                width: 90%;
+                margin-left: 20px;  
+            }
+        }   
+        .readMe-text{
+            font-size: 0.93em;
+            line-height: 25px;
+            @include lg{
+                font-size: 0.87em;
+                 width: 90%;
+                 margin-left: 20px;
+                 text-align: left;
+            }
+        }
+    }
+    .survey{
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 30px rgb(0 0 0 / 20%);
+        @include lg{
+            max-width: 360px;
+        }
+        iframe{
+            padding: 40px 0px;
+            @include lg{
+                height: 1700px;
+                padding: 10px 0;
+            }
+        }
+    }
+    
+}
